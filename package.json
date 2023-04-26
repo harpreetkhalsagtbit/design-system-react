@@ -1,0 +1,43 @@
+{
+  "name": "design-system-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --no-compress",
+    "dev": "microbundle watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harpreetkhalsagtbit/design-system-react.git"
+  },
+  "author": "harpreetkhalsagtbit@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harpreetkhalsagtbit/design-system-react/issues"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "homepage": "https://github.com/harpreetkhalsagtbit/design-system-react#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^3.3.2",
+    "twin.macro": "^3.3.1"
+  }
+}
