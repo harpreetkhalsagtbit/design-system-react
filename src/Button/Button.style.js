@@ -15,17 +15,17 @@ const defaultButtonStyle = tw`
 
 const primaryStyle = tw`
 	text-white
-	bg-adp-primary
+	bg-primary
 	border-none
 
-	hover:shadow-adp
-	hover:border-adp-border
+	hover:shadow-base
+	hover:border-border-base
 
-	active:bg-adp-primary-active
-	active:shadow-none
+	active:bg-primary-active
+	active:drop-shadow-none
 
-	focus:bg-adp-primary-active
-	focus:shadow-none
+	focus:bg-primary-active
+	focus:drop-shadow-none
 
 	disabled:opacity-65
 	disabled:cursor-not-allowed
@@ -34,20 +34,20 @@ const primaryStyle = tw`
 const secondaryStyle = tw`
 	bg-white
 	border
-	border-adp-red
-	text-adp-red 
+	border-red-shade
+	text-red-shade 
 
-	hover:bg-adp-secondary
-	hover:shadow-adp
+	hover:bg-secondary
+	hover:shadow-base
 
-	active:bg-adp-secondary
-	active:shadow-adp
+	active:bg-secondary
+	active:shadow-base
 
-	focus:bg-adp-secondary
-	focus:shadow-adp
+	focus:bg-secondary
+	focus:shadow-base
 
 	disabled:opacity-65
-	disabled:shadow-none
+	disabled:drop-shadow-none
 	disabled:bg-white
 	disabled:cursor-not-allowed
 `;
@@ -55,20 +55,20 @@ const secondaryStyle = tw`
 const tertiaryStyle = tw`
 	bg-white
 	border
-	border-adp-tertiary
-	text-adp-text-tertiary
+	border-tertiary
+	text-text-tertiary
 
-	hover:bg-adp-secondary
-	hover:shadow-adp
+	hover:bg-secondary
+	hover:shadow-base
 
-	active:bg-adp-secondary
-	active:shadow-adp
+	active:bg-secondary
+	active:shadow-base
 
-	focus:bg-adp-secondary
-	focus:shadow-adp
+	focus:bg-secondary
+	focus:shadow-base
 
 	disabled:opacity-65
-	disabled:shadow-none
+	disabled:drop-shadow-none
 	disabled:bg-white
 	disabled:cursor-not-allowed
 `;
@@ -76,21 +76,17 @@ const tertiaryStyle = tw`
 const quarternaryStyle = tw`
 	bg-white
 	border-none
-	text-adp-text-tertiary
+	text-text-tertiary
 
-	hover:bg-adp-quarternary
+	hover:bg-quarternary
 
-	active:bg-adp-quarternary
+	active:bg-quarternary
 
-	focus:bg-adp-quarternary
+	focus:bg-quarternary
 
-	disabled:bg-adp-quarternary
+	disabled:bg-quarternary
 	disabled:opacity-65
 	disabled:cursor-not-allowed
-`;
-
-const fullWidthStyle = tw`
-	w-full
 `;
 
 const ButtonType = ({ primary, secondary, tertiary, quarternary }) => [
@@ -101,22 +97,7 @@ const ButtonType = ({ primary, secondary, tertiary, quarternary }) => [
 	quarternary && quarternaryStyle,
 	!primary && !secondary && !tertiary && !quarternary && primaryStyle, // default primary
 ];
-const ButtonFullWidth = ({ wide = false }) => [wide && fullWidthStyle];
 
-const iconRowReverse = tw`
-	flex-row-reverse
-`;
-const IconButton = ({ left = false }) => [left && iconRowReverse];
-
-const StyledButton = styled.button(() => [ButtonType, ButtonFullWidth, IconButton]);
-
-const iconStyleLeft = tw`
-	ml-1
-`;
-const iconStyleRight = tw`
-	mr-1
-`;
-const IconAlignment = ({ left = false }) => [left ? iconStyleLeft : iconStyleRight];
-export const StyledSpanContainerForIcon = styled.span(() => [IconAlignment]);
+const StyledButton = styled.button(() => [ButtonType]);
 
 export default StyledButton;
