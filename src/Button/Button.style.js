@@ -98,6 +98,22 @@ const ButtonType = ({ primary, secondary, tertiary, quarternary }) => [
 	!primary && !secondary && !tertiary && !quarternary && primaryStyle, // default primary
 ];
 
-const StyledButton = styled.button(() => [ButtonType]);
+// Icon Button Styles
+const iconRowReverse = tw`
+	flex-row-reverse
+`;
+const IconButton = ({ left = false }) => [left && iconRowReverse];
 
+// Append Icon Button style to the same styled button
+const StyledButton = styled.button(() => [ButtonType, IconButton]);
 export default StyledButton;
+
+// Manage margin between button text and icon
+const iconStyleLeft = tw`
+	ml-1
+`;
+const iconStyleRight = tw`
+	mr-1
+`;
+const IconAlignment = ({ left = false }) => [left ? iconStyleLeft : iconStyleRight];
+export const StyledSpanContainerForIcon = styled.span(() => [IconAlignment]);
